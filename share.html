@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蜜鄰和平店團購分享</title>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding: 30px;">
+  <h2>蜜鄰和平店團購開跑！</h2>
+  <p>快把好康分享給好友 ❤️</p>
+  <button id="shareBtn" style="background:#FFA733;color:#fff;padding:10px 20px;border:none;border-radius:6px;">
+    分享給好友
+  </button>
+
+  <script>
+    async function main() {
+      // 初始化 LIFF
+      await liff.init({ liffId: "2008383604-Rk14OXra" });
+
+      // 綁定按鈕事件
+      document.getElementById("shareBtn").addEventListener("click", async () => {
+        await liff.shareTargetPicker([
+          {
+            type: "text",
+            text: "蜜鄰和平店團購開跑！快來看看 👉 https://meicy321.github.io/groupbuying/"
+          }
+        ]);
+      });
+    }
+
+    main();
+  </script>
+</body>
+</html>
