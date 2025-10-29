@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>蜜鄰團購分享</title>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+  <script>
+    async function main() {
+      await liff.init({ liffId: "你的_LIFF_ID" }); // 👈 改成妳從 LINE Developers 拿到的那串 ID
+
+      const messages = [
+        {
+          type: "flex",
+          altText: "📢 蜜鄰和平店團購訊息",
+          contents: {
+            type: "carousel",
+            contents: [
+              {
+                "type": "bubble",
+                "hero": {
+                  "type": "image",
+                  "size": "full",
+                  "aspectRatio": "20:13",
+                  "aspectMode": "cover",
+                  "url": "https://i.postimg.cc/R0zk5gN5/e-rou-gong-wan.jpg"
+                },
+                "body": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    { "type": "text", "text": "下營農會鵝肉貢丸", "weight": "bold", "size": "xl" },
+                    { "type": "text", "text": "特價：170元/包", "weight": "bold", "size": "md" }
+                  ]
+                },
+                "footer": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "button",
+                      "style": "primary",
+                      "action": {
+                        "type": "uri",
+                        "label": "購買連結",
+                        "uri": "https://tsc.ksi.com.tw/FC/r3SRi"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "bubble",
+                "hero": {
+                  "type": "image",
+                  "size": "full",
+                  "aspectRatio": "20:13",
+                  "aspectMode": "cover",
+                  "url": "https://i.postimg.cc/yNXwV0Zz/ban-ji-qie-kuai.jpg"
+                },
+                "body": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    { "type": "text", "text": "童仔雞半雞切塊", "weight": "bold", "size": "xl" },
+                    { "type": "text", "text": "特價：225元/包", "weight": "bold", "size": "md" }
+                  ]
+                },
+                "footer": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "button",
+                      "style": "primary",
+                      "action": {
+                        "type": "uri",
+                        "label": "購買連結",
+                        "uri": "https://tsc.ksi.com.tw/FC/m2HTg"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ];
+
+      await liff.shareTargetPicker(messages);
+      liff.closeWindow();
+    }
+    main();
+  </script>
+</body>
+</html>
