@@ -5,20 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>蜜鄰和平店團購分享</title>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      text-align: center;
+      background: #fffaf3;
+      color: #333;
+      margin: 0;
+      padding: 50px 20px;
+    }
+    h1 {
+      color: #e67e22;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: #ffa733;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    button:hover {
+      background-color: #ff9200;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding: 30px;">
-  <h2>蜜鄰和平店團購開跑！</h2>
-  <p>快把好康分享給好友 ❤️</p>
-  <button id="shareBtn" style="background:#FFA733;color:#fff;padding:10px 20px;border:none;border-radius:6px;">
-    分享給好友
-  </button>
+<body>
+  <h1>🐝 蜜鄰和平店團購開跑！</h1>
+  <p>快把好康分享給好友，一起買起來 ❤️</p>
+  <button id="shareBtn">📩 分享給好友</button>
+  <button id="homeBtn">🏠 回團購首頁</button>
 
   <script>
     async function main() {
       // 初始化 LIFF
       await liff.init({ liffId: "2008383604-Rk14OXra" });
 
-      // 綁定按鈕事件
+      // 分享按鈕
       document.getElementById("shareBtn").addEventListener("click", async () => {
         await liff.shareTargetPicker([
           {
@@ -27,8 +57,12 @@
           }
         ]);
       });
-    }
 
+      // 回首頁按鈕
+      document.getElementById("homeBtn").addEventListener("click", () => {
+        window.location.href = "https://meicy321.github.io/groupbuying/";
+      });
+    }
     main();
   </script>
 </body>
