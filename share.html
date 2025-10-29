@@ -2,124 +2,163 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <title>蜜鄰和平店團購分享</title>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </head>
 <body>
 <script>
-  async function main() {
-    await liff.init({ liffId: "2008383604-Rk14OXra" });
-    try {
-      await liff.shareTargetPicker([
-        {
-          type: "flex",
-          altText: "🐝 蜜鄰和平店團購開跑中！",
-          contents: {
-            "type": "carousel",
-            "contents": [
-              {
-                "type": "bubble",
-                "hero": { "type": "image", "size": "full", "aspectRatio": "20:13", "aspectMode": "cover", "url": "https://i.postimg.cc/R0zk5gN5/e-rou-gong-wan.jpg" },
-                "body": {
-                  "type": "box", "layout": "vertical",
-                  "contents": [
-                    { "type": "text", "text": "下營農會鵝肉貢丸", "weight": "bold", "size": "xl", "wrap": true },
-                    { "type": "text", "text": "特價：170元/包", "size": "sm", "wrap": true }
-                  ]
-                },
-                "footer": {
-                  "type": "box", "layout": "vertical", "spacing": "sm",
-                  "contents": [
-                    { "type": "button", "style": "primary", "action": { "type": "uri", "label": "購買連結", "uri": "https://tsc.ksi.com.tw/FC/r3SRi" } },
-                    { "type": "button", "style": "primary", "color": "#FFA733", "action": { "type": "uri", "label": "分享給好友", "uri": "https://liff.line.me/2008383604-Rk14OXra" } }
-                  ]
-                }
+async function main() {
+  await liff.init({ liffId: "2008383604-Rk14OXra" });
+  try {
+    await liff.shareTargetPicker([
+      {
+        type: "flex",
+        altText: "🐝 蜜鄰和平店團購開跑中！",
+        contents: {
+          "type": "carousel",
+          "contents": [
+            {
+              "type": "bubble",
+              "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "url": "https://i.postimg.cc/R0zk5gN5/e-rou-gong-wan.jpg"
               },
-              {
-                "type": "bubble",
-                "hero": { "type": "image", "size": "full", "aspectRatio": "20:13", "aspectMode": "cover", "url": "https://i.postimg.cc/yNXwV0Zz/ban-ji-qie-kuai.jpg" },
-                "body": {
-                  "type": "box", "layout": "vertical",
-                  "contents": [
-                    { "type": "text", "text": "童仔雞半雞切塊", "weight": "bold", "size": "xl", "wrap": true },
-                    { "type": "text", "text": "特價：225元/包", "size": "sm", "wrap": true }
-                  ]
-                },
-                "footer": {
-                  "type": "box", "layout": "vertical", "spacing": "sm",
-                  "contents": [
-                    { "type": "button", "style": "primary", "action": { "type": "uri", "label": "購買連結", "uri": "https://tsc.ksi.com.tw/FC/m2HTg" } },
-                    { "type": "button", "style": "primary", "color": "#FFA733", "action": { "type": "uri", "label": "分享給好友", "uri": "https://liff.line.me/2008383604-Rk14OXra" } }
-                  ]
-                }
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "下營農會鵝肉貢丸",
+                    "wrap": true,
+                    "weight": "bold",
+                    "size": "xl"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "特價：170元/包",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "xl",
+                        "flex": 0
+                      }
+                    ]
+                  }
+                ]
               },
-              {
-                "type": "bubble",
-                "hero": { "type": "image", "size": "full", "aspectRatio": "20:13", "aspectMode": "cover", "url": "https://i.postimg.cc/8CV2QZsR/3.jpg" },
-                "body": {
-                  "type": "box", "layout": "vertical",
-                  "contents": [
-                    { "type": "text", "text": "禾乃川酸白菜", "weight": "bold", "size": "xl", "wrap": true },
-                    { "type": "text", "text": "特價：252元/盒", "size": "sm", "wrap": true }
-                  ]
-                },
-                "footer": {
-                  "type": "box", "layout": "vertical", "spacing": "sm",
-                  "contents": [
-                    { "type": "button", "style": "primary", "action": { "type": "uri", "label": "購買連結", "uri": "https://tsc.ksi.com.tw/FC/n6B7G" } },
-                    { "type": "button", "style": "primary", "color": "#FFA733", "action": { "type": "uri", "label": "分享給好友", "uri": "https://liff.line.me/2008383604-Rk14OXra" } }
-                  ]
-                }
-              },
-              {
-                "type": "bubble",
-                "hero": { "type": "image", "size": "full", "aspectRatio": "20:13", "aspectMode": "cover", "url": "https://i.postimg.cc/1zcL9Dq1/te-da-wei-sheng-xian-bai-xia.jpg" },
-                "body": {
-                  "type": "box", "layout": "vertical",
-                  "contents": [
-                    { "type": "text", "text": "蝦覓世界特大尾白蝦", "weight": "bold", "size": "xl", "wrap": true },
-                    { "type": "text", "text": "特價：470元/2包", "size": "sm", "wrap": true }
-                  ]
-                },
-                "footer": {
-                  "type": "box", "layout": "vertical", "spacing": "sm",
-                  "contents": [
-                    { "type": "button", "style": "primary", "action": { "type": "uri", "label": "購買連結", "uri": "https://tsc.ksi.com.tw/FC/Gc9e7" } },
-                    { "type": "button", "style": "primary", "color": "#FFA733", "action": { "type": "uri", "label": "分享給好友", "uri": "https://liff.line.me/2008383604-Rk14OXra" } }
-                  ]
-                }
-              },
-              {
-                "type": "bubble",
-                "hero": { "type": "image", "size": "full", "aspectRatio": "20:13", "aspectMode": "cover", "url": "https://i.postimg.cc/LsMcKxnm/ri-ben-he-ge-shan-guo-zhi.jpg" },
-                "body": {
-                  "type": "box", "layout": "vertical",
-                  "contents": [
-                    { "type": "text", "text": "和歌山100%蜜柑果汁", "weight": "bold", "size": "xl", "wrap": true },
-                    { "type": "text", "text": "特價：295元/瓶", "size": "sm", "wrap": true }
-                  ]
-                },
-                "footer": {
-                  "type": "box", "layout": "vertical", "spacing": "sm",
-                  "contents": [
-                    { "type": "button", "style": "primary", "action": { "type": "uri", "label": "購買連結", "uri": "https://tsc.ksi.com.tw/FC/i3H8B" } },
-                    { "type": "button", "style": "primary", "color": "#FFA733", "action": { "type": "uri", "label": "分享給好友", "uri": "https://liff.line.me/2008383604-Rk14OXra" } }
-                  ]
-                }
+              "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "primary",
+                    "action": {
+                      "type": "uri",
+                      "label": "購買連結",
+                      "uri": "https://tsc.ksi.com.tw/FC/r3SRi"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "uri",
+                      "label": "分享蜜鄰和平店的團購",
+                      "uri": "https://liff.line.me/2008383604-Rk14OXra"
+                    },
+                    "style": "primary",
+                    "color": "#FFA733"
+                  }
+                ]
               }
-            ]
-          }
-        }
-      ]);
-    } catch(e) {
-      console.error("⚠️ 分享錯誤：", e);
-    }
-    liff.closeWindow();
-  }
-  main();
-</script>
-</body>
-</html>
-
+            },
+            {
+              "type": "bubble",
+              "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "url": "https://i.postimg.cc/yNXwV0Zz/ban-ji-qie-kuai.jpg"
+              },
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "童仔雞半雞切塊",
+                    "wrap": true,
+                    "weight": "bold",
+                    "size": "xl"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "baseline",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "特價：225元/包",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "xl",
+                        "flex": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "primary",
+                    "action": {
+                      "type": "uri",
+                      "label": "購買連結",
+                      "uri": "https://tsc.ksi.com.tw/FC/m2HTg"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "action": {
+                      "type": "uri",
+                      "label": "分享蜜鄰和平店的團購",
+                      "uri": "https://liff.line.me/2008383604-Rk14OXra"
+                    },
+                    "style": "primary",
+                    "color": "#FFA733"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "bubble",
+              "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "url": "https://i.postimg.cc/8CV2QZsR/3.jpg"
+              },
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "cont
 
 
 
