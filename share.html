@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>蜜鄰和平店團購分享</title>
+  <title>蜜鄰團購分享</title>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <style>
     body {
       font-family: "Microsoft JhengHei", sans-serif;
       text-align: center;
-      background: #fffaf3;
+      background-color: #fffaf3;
       color: #333;
       margin: 0;
       padding: 50px 20px;
     }
     h1 {
       color: #e67e22;
-      margin-bottom: 10px;
+      font-size: 26px;
     }
     p {
       font-size: 18px;
@@ -26,41 +26,77 @@
       background-color: #ffa733;
       border: none;
       color: white;
-      padding: 12px 24px;
-      font-size: 16px;
+      padding: 12px 30px;
+      font-size: 18px;
       border-radius: 8px;
       cursor: pointer;
-      margin: 10px;
     }
     button:hover {
-      background-color: #ff9200;
+      background-color: #ff9000;
     }
   </style>
 </head>
 <body>
-  <h1>🐝 蜜鄰和平店團購開跑！</h1>
-  <p>快把好康分享給好友，一起買起來 ❤️</p>
+  <h1>🐝 蜜鄰團購開跑！</h1>
+  <p>快分享給好友，一起來團購吧 💛</p>
   <button id="shareBtn">📩 分享給好友</button>
-  <button id="homeBtn">🏠 回團購首頁</button>
 
   <script>
     async function main() {
-      // 初始化 LIFF
+      // ✅ 初始化 LIFF（妳的 liffId）
       await liff.init({ liffId: "2008383604-Rk14OXra" });
 
-      // 分享按鈕
-      document.getElementById("shareBtn").addEventListener("click", async () => {
-        await liff.shareTargetPicker([
-          {
-            type: "text",
-            text: "蜜鄰和平店團購開跑！快來看看 👉 https://meicy321.github.io/groupbuying/"
-          }
-        ]);
-      });
+      // ✅ 檢查是否在 LINE 裡打開
+      if (!liff.isInClient()) {
+        alert("請在 LINE 裡開啟這個頁面才能使用分享功能喔！");
+        return;
+      }
 
-      // 回首頁按鈕
-      document.getElementById("homeBtn").addEventListener("click", () => {
-        window.location.href = "https://meicy321.github.io/groupbuying/";
+      // ✅ 分享功能
+      document.getElementById("shareBtn").addEventListener("click", async () => {
+        try {
+          await liff.shareTargetPicker([
+            {
+              type: "flex",
+              altText: "蜜鄰團購好康分享！",
+              contents: {
+                type: "bubble",
+                hero: {
+                  type: "image",
+                  url: "https://i.postimg.cc/R0zk5gN5/e-rou-gong-wan.jpg",
+                  size: "full",
+                  aspectRatio: "20:13",
+                  aspectMode: "cover"
+                },
+                body: {
+                  type: "box",
+                  layout: "vertical",
+                  contents: [
+                    {
+                      type: "text",
+                      text: "蜜鄰和平店團購開跑中 🎉",
+                      weight: "bold",
+                      size: "xl",
+                      wrap: true
+                    },
+                    {
+                      type: "text",
+                      text: "立即查看 👉 https://meicy321.github.io/groupbuying/",
+                      size: "sm",
+                      color: "#555555",
+                      wrap: true
+                    }
+                  ]
+                }
+              }
+            }
+          ]);
+          // ✅ 分享完成後自動關閉
+          liff.closeWindow();
+        } catch (err) {
+          console.error(err);
+          alert("分享失敗，請再試一次！");
+        }
       });
     }
     main();
